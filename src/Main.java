@@ -48,8 +48,8 @@ public class Main {
      */
     private static void playWheel() {
         printGreeting("wheel");
-        String answer = "";
-        String hint = "";
+        String answer = "History is written by the victors but victims write the memoirs";
+        String hint = "Carol";
 
         // TODO: review if/switch statements here (why is one better/worse?)
 
@@ -72,7 +72,16 @@ public class Main {
         // If time: add points
         String guessed = "";
         // TODO: Build for loop to build guessed here
-        // Start more code here
+        for (int i = 0; i<answer.length(); i++) {
+            guessed += "_";
+        }
+        System.out.println(guessed);
+        System.out.println(answer);
+
+        for (String word : answer.split(" ")) {
+            System.out.println(word);
+        }
+
 
         //TODO: Get guess and check versus string
         // To start print the answer & hint then make sure guess works
