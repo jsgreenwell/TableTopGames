@@ -19,7 +19,7 @@ public class Main {
                     Please select one of the following games:
                     \t1. Even/Odd
                     \t2. Red/Blue
-                    \t3. Encryption Break!
+                    \t3. America's Game (Wheel)!
                     """);
 
             choice = scan.nextInt();
