@@ -37,7 +37,7 @@ public class Main {
                 playWheel();
                 break;
             default:
-
+                System.out.println("Invalid choice! Exiting...");
                 break;
         }
     }
@@ -73,8 +73,22 @@ public class Main {
         String guessed = "";
         // TODO: Build for loop to build guessed here
         for (int i = 0; i<answer.length(); i++) {
-            guessed += "_";
+            if (answer.charAt(i) != ' ') {
+                guessed += "_";
+            } else {
+                guessed += " ";
+            }
         }
+        /* Alternate way to build: which do you like better?
+        for (char letter : answer.toCharArray()) {
+            if (letter != ' ') {
+                guessed += "_";
+            } else {
+                guessed += " ";
+            }
+        }
+
+         */
         System.out.println(guessed);
         System.out.println(answer);
 
