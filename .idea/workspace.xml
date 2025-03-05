@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Fixed typo">
+    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="added the alternative foreach loop.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -72,7 +72,7 @@
       <workItem from="1740530246014" duration="5583000" />
       <workItem from="1741018233669" duration="7524000" />
       <workItem from="1741027917631" duration="2197000" />
-      <workItem from="1741188390604" duration="1676000" />
+      <workItem from="1741188390604" duration="4608000" />
     </task>
     <task id="LOCAL-00001" summary="Added new game for learning for loops">
       <option name="closed" value="true" />
@@ -90,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741022312218</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added the alternative foreach loop.">
+      <option name="closed" value="true" />
+      <created>1741200731290</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741200731290</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +107,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added new game for learning for loops" />
     <MESSAGE value="Fixed typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed typo" />
+    <MESSAGE value="added the alternative foreach loop." />
+    <option name="LAST_COMMIT_MESSAGE" value="added the alternative foreach loop." />
   </component>
 </project>

@@ -71,7 +71,7 @@ public class Main {
         // See algo on board. Sprints: 1. Build basic for loops. 2. Add Strings 3. Guess Logic
         // If time: add points
         String guessed = "";
-        // TODO: Build for loop to build guessed here
+
         for (int i = 0; i<answer.length(); i++) {
             if (answer.charAt(i) != ' ') {
                 guessed += "_";
@@ -96,13 +96,26 @@ public class Main {
             System.out.println(word);
         }
 
-
         //TODO: Get guess and check versus string
         // To start print the answer & hint then make sure guess works
         // Remove answer after and just print guessed (26 guesses at max)
         // Add difficulty select (hard = less guesses & upper/lower matter)
 
-        // Start more code here
+        System.out.print("Would you like to guess a letter or solve? (l/s) : ");
+        String choice = scan.nextLine().toLowerCase();
+        if (choice.startsWith("l")) {
+            // Here we start: for or foreach?
+
+        } else {
+            System.out.println("Please enter your guess (no punctuation but include spaces):");
+            String finalGuess = scan.nextLine();
+
+            if (finalGuess.equalsIgnoreCase(answer)) {
+                System.out.println("You guessed correctly!");
+            } else {
+                System.out.println("Your guess is not correct!");
+            }
+        }
 
     }
 
