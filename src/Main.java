@@ -48,28 +48,27 @@ public class Main {
      */
     private static void playWheel() {
         printGreeting("wheel");
-        String answer = "History is written by the victors but victims write the memoirs";
-        String hint = "Carol";
 
-        // TODO: review if/switch statements here (why is one better/worse?)
+        // Two constants for answers and hints
+        final String[] answers = {
+                "History repeats itself first as tragedy second as farce",
+                "History is written by the victors",
+                "History is a set of lies agreed upon",
+                "History is written by the victors but victims write the memoirs"
+        };
 
-        // If or Switch for get random to assign on of these options
-        /*
-        answer = "History repeats itself first as tragedy second as farce"
-        hint = "Karl Marx quote on histories cyclic nature often attributed to others."
+            ;
+        final String[] hints = {
+                "Karl Marx quote on histories cyclic nature often attributed to others.",
+                "This British prime minister during WWII had many famous quotes including this one about recording events",
+                "Before his downfall at Waterloo, this French dictator shared his cynical view of humanity's memory in this quote",
+                "Carol Travis devoted her life to fighting psychobabble, biobunk, and pseudoscience. She famously corrected Churchill with this quote"
+        };
 
-        answer = "History is written by the victors"
-        hint = "This British prime minister during WWII had many famous quotes including this one about recording events"
-
-        answer = "History is a set of lies agreed upon"
-        hint = "Before his downfall at Waterloo, this French dictator shared his cynical view of humanity's memory in this quote"
-
-        answer = "History is written by the victors but victims write the memoirs"
-        hint = "Carol Travis devoted her life to fighting psychobabble, biobunk, and pseudoscience. She famously corrected Churchill with this quote"
-        */
-
-        // See algo on board. Sprints: 1. Build basic for loops. 2. Add Strings 3. Guess Logic
-        // If time: add points
+        // Set up the answer and hint for guessing (pick one from array at random
+        int ranNum = getRandom(0,answers.length);
+        String answer = answers[ranNum];
+        String hint = hints[ranNum];
         String guessed = "";
 
         /* Alternate way to build: which do you like better?
@@ -87,13 +86,15 @@ public class Main {
         // Loop until solved or last letter used (i.e. run for all letters)
         // Incorrect solve also exits but with different message
         for (char c = 'A'; c <= 'Z'; c++) {
+            clearScreen();
+
             System.out.print("Would you like to guess a letter or solve? (l/s) : ");
             String choice = scan.nextLine().toLowerCase();
             if (choice.startsWith("l")) {
                 // Here we start: print current guess
                 System.out.print("Current guess:\n\t");
                 System.out.println(guessed);
-                System.out.println(answer); // Remove after
+                System.out.println(hint); // Remove after
 
                 System.out.print("Enter the letter you guess: ");
                 char newguess = scan.nextLine().toLowerCase().charAt(0);
@@ -105,7 +106,7 @@ public class Main {
                 for (int i = 0; i < answer.length(); i++) {
                     if (answer.toLowerCase().charAt(i) == newguess) {
                         if (!correct) {
-                            System.out.print("You guessed a correct letter!");
+                            System.out.println("You guessed a correct letter!");
                             correct = true;
                         }
                         guessed = guessed.substring(0, i) + answer.charAt(i) + guessed.substring(i + 1);
@@ -114,6 +115,9 @@ public class Main {
                 correct = false;
 
                 System.out.println("Correct guesses: " + guessed);
+                System.out.print("Hit any enter to continue...");
+                scan.nextLine();
+
             } else {
                 System.out.println("Guessed Phrase letters: \n\t" + guessed);
                 System.out.println("Please enter your guess (no punctuation but include spaces):");
@@ -125,13 +129,12 @@ public class Main {
                     System.out.println("Your guess is not correct!");
                 }
 
-                // Right or wrong its time to exit
+                // Right or wrong it is time to exit
                 System.out.print("Thanks for playing! Hit any enter to exit...");
                 scan.nextLine();
                 return;
             }
         }
-
     }
 
     /**
@@ -145,7 +148,6 @@ public class Main {
         int redTeam = 0;
         int blueTeam = 0;
 
-        // TODO: Add a for loop to play for a number of rounds (based on asking player how many)
         int card = getRandom(1,3);
         switch (card) {
             case 1:
