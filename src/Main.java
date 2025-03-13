@@ -11,8 +11,10 @@ public class Main {
      */
     public static void main(String[] args) {
         // Display main menu & get user choice (repeat until there is a correct choice)
-        int choice = 0;
-        while (choice < 1 || choice > 4) {
+
+        // Using label to break out of game - should use a function & return
+        gameLoop:
+        while (true) {
             clearScreen();
             System.out.println("""
                     Welcome to our little Game System!
@@ -20,26 +22,67 @@ public class Main {
                     \t1. Even/Odd
                     \t2. Red/Blue
                     \t3. America's Game (Wheel)!
+                    \t4. Monopoly(-ish) Deal!
+                    \t9. Exit
                     """);
 
-            choice = scan.nextInt();
-            scan.nextLine(); // remove extra newline
-        }
+            int choice = 0;
+            choice = Integer.parseInt(scan.nextLine());
+            // above removes extra newline & ensures an integer value
 
-        switch (choice) {
-            case 1:
-                playEvenOdd();
-                break;
-            case 2:
-                playRedBlue();
-                break;
-            case 3:
-                playWheel();
-                break;
-            default:
-                System.out.println("Invalid choice! Exiting...");
-                break;
+            switch (choice) {
+                case 1:
+                    playEvenOdd();
+                    break;
+                case 2:
+                    playRedBlue();
+                    break;
+                case 3:
+                    playWheel();
+                    break;
+                case 4:
+                    playDeal();
+                    break;
+                case 9:
+                    System.out.println("Thanks for playing! Goodbye!");
+                    break gameLoop;
+                default:
+                    System.out.println("Invalid choice! Exiting...");
+                    break gameLoop;
+            }
         }
+    }
+
+    /**
+     * This will have a game based on a card version of Monopoly.
+     */
+    private static void playDeal() {
+        printGreeting("deal");
+
+        int[] money = {5, 2, 1, 3, 4}; // drawn money (by denomination
+        String[] action = {"Deal Breaker", "", "Rent", "House", "Hotel"};
+
+        // The below works but is wasteful
+        int totalMoney = 0;
+        for (int bill : money) {
+            totalMoney += bill;
+        }
+        System.out.println("Total money: " + totalMoney);
+
+        for (String a : action) {
+            System.out.println(a);
+        }
+        System.out.println();
+
+        // Why is this better?
+        totalMoney = 0;
+        for (int i=0; i<money.length; i++) {
+            System.out.printf("\tBill value %d with action %s\n", money[i], action[i]);
+            // better add an if (action[i]) before this
+            totalMoney += money[i];
+        }
+        System.out.println("Total money: " + totalMoney);
+
     }
 
     /**
@@ -224,14 +267,14 @@ public class Main {
                Time to start Even & Odd (Cho-han)!
                Press enter when your ready to continue:""");
                 break;
-            case "redblue":
+            case "redblue": case "deal":
                 System.out.print("""
                 |A .  |
                 | /.\\ |
                 |(_._)|
                 |  |  |
                 |____V|
-               Time to start Red & Blue!
+               Time to start a card game!
                Press enter when your ready to continue:""");
                 break;
             case "wheel":

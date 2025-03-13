@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Finished Logic for Wheel">
+    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Added for loop for all letters">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -73,7 +73,9 @@
       <workItem from="1741018233669" duration="7524000" />
       <workItem from="1741027917631" duration="2197000" />
       <workItem from="1741188390604" duration="6034000" />
-      <workItem from="1741614844043" duration="3826000" />
+      <workItem from="1741614844043" duration="9367000" />
+      <workItem from="1741660859657" duration="4000" />
+      <workItem from="1741888855505" duration="1813000" />
     </task>
     <task id="LOCAL-00001" summary="Added new game for learning for loops">
       <option name="closed" value="true" />
@@ -115,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741618133246</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added for loop for all letters">
+      <option name="closed" value="true" />
+      <created>1741618914482</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741618914482</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +137,7 @@
     <MESSAGE value="added the alternative foreach loop." />
     <MESSAGE value="added some more logic" />
     <MESSAGE value="Finished Logic for Wheel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Logic for Wheel" />
+    <MESSAGE value="Added for loop for all letters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added for loop for all letters" />
   </component>
 </project>
