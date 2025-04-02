@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     // scan is used as a class variable (not global) for now to handle input
@@ -11,6 +11,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // Display main menu & get user choice (repeat until there is a correct choice)
+
+        EvenOdd evenOdd = new EvenOdd();
+        RedBlue redBlue = new RedBlue();
 
         // Using label to break out of game - should use a function & return
         gameLoop:
@@ -32,10 +35,10 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    playEvenOdd();
+                    evenOdd.playEvenOdd();
                     break;
                 case 2:
-                    playRedBlue();
+                    redBlue.playRedBlue();
                     break;
                 case 3:
                     playWheel();
@@ -59,12 +62,56 @@ public class Main {
     private static void playDeal() {
         printGreeting("deal");
 
-        int[] money = {5, 2, 1, 3, 4}; // drawn money (by denomination
+        List<Integer> money = new ArrayList<>();
+
+        while (true) {
+            System.out.print("Enter money value (1 to 10): ");
+            int moneyValue = Integer.parseInt(scan.nextLine());
+            if (moneyValue >= 1 && moneyValue <= 10) {
+                money.add(moneyValue);
+            }
+
+            System.out.print("Do you have more money (y/n): ");
+            String answer = scan.nextLine();
+            if (!answer.toLowerCase().startsWith("y")) {
+                break;
+            }
+
+        }
+
+        int switched = 1; // how many switches? if more than 0 then keep going
+        while (switched > 0) {
+            switched = 0;
+
+            // single pass of bubble sort
+            for (int i = 0; i < money.size(); i++) {
+                if (i != 0) {
+                    if (money.get(i) < money.get(i - 1)) {
+                        int temp = money.get(i - 1);
+                        money.set(i - 1, money.get(i));
+                        money.set(i, temp);
+                        switched++;
+                    }
+                }
+                // if it's the first value just ignore it and move on
+            }
+        }
+
+        //Arrays.sort(money); // way faster
+
+        // You can also use these options
+        // Collections.sort(money);
+        // Collections.reverse(money);
+        // Collections.shuffle(money);
+
+
         String[] action = {"Deal Breaker", "", "Rent", "House", "Hotel"};
+        Arrays.sort(action);
 
         // The below works but is wasteful
         int totalMoney = 0;
         for (int bill : money) {
+            System.out.println(bill);
             totalMoney += bill;
         }
         System.out.println("Total money: " + totalMoney);
@@ -76,10 +123,13 @@ public class Main {
 
         // Why is this better?
         totalMoney = 0;
-        for (int i=0; i<money.length; i++) {
-            System.out.printf("\tBill value %d with action %s\n", money[i], action[i]);
+        // 2nd change: length is now size
+        // for (int i=0; i<money.length; i++) {
+        for (int i=0; i<money.size(); i++) {
+            // Final change: get not []
+            System.out.printf("\tBill value %d with action %s\n", money.get(i), action[i]);
             // better add an if (action[i]) before this
-            totalMoney += money[i];
+            totalMoney += money.get(i);
         }
         System.out.println("Total money: " + totalMoney);
 
@@ -137,7 +187,7 @@ public class Main {
                 // Here we start: print current guess
                 System.out.print("Current guess:\n\t");
                 System.out.println(guessed);
-                System.out.println(hint); // Remove after
+                System.out.println(hint);
 
                 System.out.print("Enter the letter you guess: ");
                 char newguess = scan.nextLine().toLowerCase().charAt(0);
@@ -181,93 +231,13 @@ public class Main {
     }
 
     /**
-     * Red vs. Blue, it's me versus you....
-     * This game is a simplified version of an old dice game.
-     * If you get red = 1 point, blue = 1 point for blue, and joker = both lose point
-     */
-    private static void playRedBlue() {
-        printGreeting("redblue");
-
-        int redTeam = 0;
-        int blueTeam = 0;
-
-        int card = getRandom(1,3);
-        switch (card) {
-            case 1:
-                System.out.println("Card is Red!");
-                redTeam++;
-                System.out.println("\tCongrats! Red Team gets a point!");
-                break;
-            case 2:
-                System.out.println("Card is Blue!");
-                blueTeam++;
-                System.out.println("\tBlue Team gets a point!");
-                break;
-            case 3:
-                System.out.println("Card is Joker!");
-                redTeam--;
-                blueTeam--;
-                System.out.println("\tJoker Steals a point from each team!");
-                break; // not needed (end of switch)
-        }
-
-        if (redTeam > blueTeam) {
-            System.out.println("You are the winner red!");
-        } else if (redTeam < blueTeam) {
-            System.out.println("Blue Team has won!");
-        } else if (redTeam == blueTeam) {
-            System.out.println("A Tie - no winners");
-        } else if (redTeam < 0 && blueTeam < 0) {
-            System.out.println("The Joker won and stole all the points!");
-        }
-    }
-
-    /**
-     * Main function for playing ChoHan (Even/Odd).
-     */
-    private static void playEvenOdd() {
-        // Print start page
-        printGreeting("evenodd");
-
-        // Get random number for dice
-        int dieOne = getRandom(1,12);
-        int dieTwo = getRandom(1, 12);
-        
-        // Get Type of Bet & Bet Amount
-        boolean win = getGuess(dieOne, dieTwo);
-        long bet = getBet();
-
-        if (!win) {
-            System.out.printf("\n\nSorry you lost $%.2f! Dice were %d & %d!\nFeel Free to play again!\n",
-                    bet*1.0/100, dieOne, dieTwo);
-        } else {
-            long winnings = getWinnings(dieOne+dieTwo)*bet;
-
-            System.out.print("\n\n********Congrats!!!*******\n\n");
-            System.out.printf("You have won $%.2f from a bet of $%.2f with rolls of %d & %d!\n",
-                    winnings*1.0/100, bet*1.0/100, dieOne, dieTwo);
-        }
-    }
-
-    /**
      * Print out art and greeting based on passed game.
      * @param game The game to play
      */
     private static void printGreeting(String game) {
         clearScreen();
         switch (game) {
-            case "evenodd":
-                System.out.print("""
-                  ____
-                 /\\' .\\    _____
-                /: \\___\\  / .  /\\
-                \\' / . / /____/..\\
-                 \\/___/  \\'  '\\  /
-                          \\'__'\\/
-               Time to start Even & Odd (Cho-han)!
-               Press enter when your ready to continue:""");
-                break;
-            case "redblue": case "deal":
+            case "deal":
                 System.out.print("""
                 |A .  |
                 | /.\\ |
@@ -293,66 +263,6 @@ public class Main {
         // Pause until Enter hit then clear Logo screen
         scan.nextLine();
         clearScreen();
-    }
-
-    /**
-     * This function checks to see if they guess even or odd (odd is default).
-     * If even chosen and both items add to even number it returns true (otherwise false).
-     * If odd chosen and both items add to an odd, it returns true (otherwise false).
-     * @param addend1 The first number to be added
-     * @param addend2 The second number to be added
-     * @return True or False based on guess and sum of 2 items (even or odd sum)
-     */
-    private static boolean getGuess(int addend1, int addend2) {
-        System.out.print("Please enter even or odd for your guess (default is odd): ");
-        String guess = scan.nextLine().toLowerCase(); // Hah - just make it lowercase before checking
-        if (guess.startsWith("e")) {
-            // Could make this an if...but don't need to
-            // the equation is checked against 0 remainder (which gives true or false)
-            return (addend1 + addend2) % 2 == 0;
-        } else {
-            // (3 + 8)/2 => 11/2 => 5r1 <- mod (%) gets remainder
-            return (addend1 + addend2) % 2 == 1;
-        }
-    }
-
-    /**
-     * This gets the bet the player wants to place on whether its odd or even.
-     * Must be between 100 or 10000 dollars or will be set to 100 by default.
-     * @return the player's bet
-     */
-    private static long getBet() {
-        System.out.print("Bets are $100 minimum & $10000 max. How much will you bet? $");
-        long bet = (long) (scan.nextDouble()*100);
-
-        if (bet < 10000 || bet > 1000000) {
-            // Set minimum bet because it wasn't in range
-            System.out.println("Minimum bet of $100 set because bet out of range.");
-            return 10000;
-        }
-        return bet;
-    }
-
-    /**
-     * This calculates the odds of the dice total and returns it for the winnings.
-     * So 7 is possible in 6/36 so double, 6&8 are next so 3, etc.
-     * @param diceTotal The total of the 2 dice (added together)
-     * @return The amount to increase the winnings
-     */
-    private static long getWinnings(int diceTotal) {
-        if (diceTotal == 7) {
-            return 2;
-        } else if (diceTotal == 6 || diceTotal == 8) {
-            return 3;
-        } else if (diceTotal == 5 || diceTotal == 9) {
-            return 4;
-        } else if (diceTotal == 4 || diceTotal == 10) {
-            return 5;
-        } else if (diceTotal == 3 || diceTotal == 11) {
-            return 6;
-        } else {
-            return 7;
-        }
     }
 
     /**

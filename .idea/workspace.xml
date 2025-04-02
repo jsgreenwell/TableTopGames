@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Added for loop for all letters">
+    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Added label and array to Deal">
+      <change afterPath="$PROJECT_DIR$/src/EvenOdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RedBlue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -12,6 +14,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,7 +84,15 @@
       <workItem from="1741188390604" duration="6034000" />
       <workItem from="1741614844043" duration="9367000" />
       <workItem from="1741660859657" duration="4000" />
-      <workItem from="1741888855505" duration="1813000" />
+      <workItem from="1741888855505" duration="3326000" />
+      <workItem from="1742841108404" duration="2175000" />
+      <workItem from="1743001444614" duration="197000" />
+      <workItem from="1743004097522" duration="2974000" />
+      <workItem from="1743012878229" duration="1410000" />
+      <workItem from="1743081425660" duration="9000" />
+      <workItem from="1743174562048" duration="2800000" />
+      <workItem from="1743436260018" duration="49000" />
+      <workItem from="1743611280754" duration="1534000" />
     </task>
     <task id="LOCAL-00001" summary="Added new game for learning for loops">
       <option name="closed" value="true" />
@@ -125,11 +142,30 @@
       <option name="project" value="LOCAL" />
       <updated>1741618914482</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added label and array to Deal">
+      <option name="closed" value="true" />
+      <created>1741890709334</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741890709334</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added new game for learning for loops" />
@@ -138,6 +174,7 @@
     <MESSAGE value="added some more logic" />
     <MESSAGE value="Finished Logic for Wheel" />
     <MESSAGE value="Added for loop for all letters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added for loop for all letters" />
+    <MESSAGE value="Added label and array to Deal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added label and array to Deal" />
   </component>
 </project>
