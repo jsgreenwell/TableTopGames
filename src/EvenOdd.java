@@ -14,7 +14,10 @@ public class EvenOdd {
 
     // Setter function that will set the maxValue
     protected void setMaxValue(int maxValue) {
-        this.maxValue = maxValue;
+        if (maxValue > 2) {
+            this.maxValue = maxValue;
+            setDieValues();
+        }
     }
 
     //Getter function that will return the maxValue of die
