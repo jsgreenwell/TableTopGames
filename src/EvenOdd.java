@@ -3,31 +3,54 @@ import java.util.Scanner;
 public class EvenOdd {
     // scan is used as a class variable (not global) for now to handle input
     private final Scanner scan = new Scanner(System.in);
+    // Let's just set the dice value (scale later)
+    private final int[] dieValues  = new int[2];
+    private int maxValue = 12;
+
+    // Constructor = sets the inital values of the dice rolls
+    public EvenOdd() {
+        setDieValues();
+    }
+
+    // Setter function that will set the maxValue
+    protected void setMaxValue(int maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    //Getter function that will return the maxValue of die
+    protected int getMaxValue() {
+        return maxValue;
+    }
+
+    // A needed setter function because its not set in the traditional way
+    protected void setDieValues() {
+        dieValues[0] = getRandom(1, maxValue);
+        dieValues[1] = getRandom(1, maxValue);
+    }
 
     /**
      * Main function for playing ChoHan (Even/Odd).
      */
     public void playEvenOdd() {
+        // set starting values of die
+        setDieValues();
+
         // Print start page
         printGreeting();
 
-        // Get random number for dice
-        int dieOne = getRandom(1,12);
-        int dieTwo = getRandom(1, 12);
-
         // Get Type of Bet & Bet Amount
-        boolean win = getGuess(dieOne, dieTwo);
+        boolean win = getGuess(dieValues[0], dieValues[1]);
         long bet = getBet();
 
         if (!win) {
             System.out.printf("\n\nSorry you lost $%.2f! Dice were %d & %d!\nFeel Free to play again!\n",
-                    bet*1.0/100, dieOne, dieTwo);
+                    bet*1.0/100, dieValues[0], dieValues[1]);
         } else {
-            long winnings = getWinnings(dieOne+dieTwo)*bet;
+            long winnings = getWinnings(dieValues[0]+dieValues[1])*bet;
 
             System.out.print("\n\n********Congrats!!!*******\n\n");
             System.out.printf("You have won $%.2f from a bet of $%.2f with rolls of %d & %d!\n",
-                    winnings*1.0/100, bet*1.0/100, dieOne, dieTwo);
+                    winnings*1.0/100, bet*1.0/100, dieValues[0], dieValues[1]);
         }
     }
 

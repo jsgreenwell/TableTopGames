@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Red vs. Blue, it's me versus you....
+ * This game is a simplified version of an old dice game.
+ * If you get red = 1 point, blue = 1 point for blue, and joker = both lose point
+ */
 public class RedBlue {
     // scan is used as a class variable (not global) for now to handle input
     private final Scanner scan = new Scanner(System.in);
 
     /**
-     * Red vs. Blue, it's me versus you....
-     * This game is a simplified version of an old dice game.
-     * If you get red = 1 point, blue = 1 point for blue, and joker = both lose point
+     * Play the game RedBlue
      */
     public void playRedBlue() {
         printGreeting();
