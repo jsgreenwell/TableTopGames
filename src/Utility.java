@@ -10,8 +10,27 @@ public class Utility {
 
     public Utility() {}
     public Utility(int newValue) {
-        maxValue = newValue;
+        setMaxValue(newValue);
     }
+
+    /**
+     * Set Max Value for random number based on passed value
+     * @param newValue Must be a number between 1 and 21
+     */
+    public void setMaxValue(int newValue) {
+        if (newValue > 0 && newValue <= 21) {
+            maxValue = newValue;
+        }
+    }
+
+    /**
+     * Returns the current max value for dice rolls
+     * @return The current maximum value for a single Die.
+     */
+    public int getMaxValue() {
+        return maxValue;
+    }
+
     /**
      * Returns a random integer between the min & max values passed.
      * @param min Minimum number to return

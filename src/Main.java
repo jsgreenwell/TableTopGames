@@ -34,6 +34,8 @@ public class Main {
             choice = Integer.parseInt(scan.nextLine());
             // above removes extra newline & ensures an integer value
 
+            if (choice < 9 ) { getPlayers(); }
+
             switch (choice) {
                 case 1:
                     evenOdd.playEvenOdd();
@@ -55,6 +57,20 @@ public class Main {
                     break gameLoop;
             }
         }
+    }
+
+    private static void getPlayers() {
+        // For now assume 2 player
+        Player player1 = new Player();
+
+        player1.name = "John";
+        player1.toString();
+        //player1.getBet(); // doesn't work
+
+        Gambler player2 = new Gambler();
+        player2.name = "Bob"; // does work.
+        player2.setBet(12.25);
+        player2.getBet();
     }
 
     /**
@@ -169,16 +185,6 @@ public class Main {
         // Pause until Enter hit then clear Logo screen
         scan.nextLine();
         clearScreen();
-    }
-
-    /**
-     * Returns a random integer between the min & max values passed.
-     * @param min Minimum number to return
-     * @param max Maximum number to return
-     * @return A number between the min & max passed.
-     */
-    private static int getRandom(int min, int max) {
-        return (int) (Math.random() * (max - min)) + min;
     }
 
     /**
