@@ -1,28 +1,14 @@
 import java.util.Scanner;
 
-public class EvenOdd {
+public class EvenOdd extends Game {
     // scan is used as a class variable (not global) for now to handle input
     private final Scanner scan = new Scanner(System.in);
     // Let's just set the dice value (scale later)
     private final int[] dieValues  = new int[2];
-    private int maxValue = 12;
 
     // Constructor = sets the inital values of the dice rolls
     public EvenOdd() {
         setDieValues();
-    }
-
-    // Setter function that will set the maxValue
-    protected void setMaxValue(int maxValue) {
-        if (maxValue > 2) {
-            this.maxValue = maxValue;
-            setDieValues();
-        }
-    }
-
-    //Getter function that will return the maxValue of die
-    protected int getMaxValue() {
-        return maxValue;
     }
 
     // A needed setter function because its not set in the traditional way
@@ -34,9 +20,17 @@ public class EvenOdd {
     /**
      * Main function for playing ChoHan (Even/Odd).
      */
-    public void playEvenOdd() {
+    public void playGame() {
         // set starting values of die
         setDieValues();
+
+        // print the rules
+        System.out.println(loadRules("evenodd"));
+
+        System.out.print("Press enter to continue: ");
+        scan.nextLine();
+
+        clearScreen();
 
         // Print start page
         printGreeting();
@@ -118,7 +112,7 @@ public class EvenOdd {
     }
 
 
-    private void printGreeting() {
+    protected void printGreeting() {
         clearScreen();
 
         System.out.print("""
@@ -133,33 +127,5 @@ public class EvenOdd {
 
         scan.nextLine();
         clearScreen();
-    }
-
-    /**
-     * Returns a random integer between the min & max values passed.
-     * @param min Minimum number to return
-     * @param max Maximum number to return
-     * @return A number between the min & max passed.
-     */
-    private int getRandom(int min, int max) {
-        return (int) (Math.random() * (max - min)) + min;
-    }
-
-    /**
-     * This is a more true clear screen (not quite but closer).
-     * It checks the OS name then uses a bunch of newlines for Windows.
-     * ANSI escape codes for Linux or Linux-based systems (i.e. everything else)
-     */
-    private void clearScreen() {
-        // System has a few cool methods including one that gets the OS name
-        if (System.getProperty("os.name").toLowerCase().startsWith("windows")) {
-            System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
-        } else {
-            // This works in Linux and ....Mac?
-            System.out.print("\033[H\033[2J");
-        }
-        // Always flush when you use escape codes or use too many newlines
-        System.out.flush();
-
     }
 }

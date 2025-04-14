@@ -1,0 +1,7 @@
+The game is based on the Hangman, but I like Wheel of Fortune's name better :)
+  A hint is given then you guess the letters of the word or guess the word.
+  Points are set at number of letters * 20 and lower by a set amount each time.
+  Difficulty levels include:
+     Easy: Hint is shown each turn, letter guessed is displayed, simple phrases
+     Normal: Hint is shown every 3 turns, no letter guessed displayed, normal phrases
+     Hard: Hint shown once, no letter guessed displayed, hardest phrases

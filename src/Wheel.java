@@ -1,12 +1,17 @@
 
-public class Wheel {
-    // utility.scan is used as a class variable (not global) for now to handle input
-    private final Utility utility = new Utility();
+public class Wheel extends Game {
+    // scan is used as a class variable (not global) for now to handle input
     /**
      * The game is based on the Hangman, but I like Wheel of Fortune's name better :)
      * A hint is given then you guess the letters of the word or guess the word.
      */
-    public void playWheel() {
+    public void playGame() {
+        System.out.println(loadRules("wheel"));
+
+        System.out.print("Press enter to continue: ");
+        scan.nextLine();
+
+        clearScreen();
         printGreeting();
 
         // Two constants for answers and hints
@@ -26,7 +31,7 @@ public class Wheel {
         };
 
         // Set up the answer and hint for guessing (pick one from array at random
-        int ranNum = utility.getRandom(0,answers.length);
+        int ranNum = getRandom(0,answers.length);
         String answer = answers[ranNum];
         String hint = hints[ranNum];
         String guessed = "";
@@ -46,10 +51,10 @@ public class Wheel {
         // Loop until solved or last letter used (i.e. run for all letters)
         // Incorrect solve also exits but with different message
         for (char c = 'A'; c <= 'Z'; c++) {
-            utility.clearScreen();
+            clearScreen();
 
             System.out.print("Would you like to guess a letter or solve? (l/s) : ");
-            String choice = utility.scan.nextLine().toLowerCase();
+            String choice = scan.nextLine().toLowerCase();
             if (choice.startsWith("l")) {
                 // Here we start: print current guess
                 System.out.print("Current guess:\n\t");
@@ -57,7 +62,7 @@ public class Wheel {
                 System.out.println(hint);
 
                 System.out.print("Enter the letter you guess: ");
-                char newguess = utility.scan.nextLine().toLowerCase().charAt(0);
+                char newguess = scan.nextLine().toLowerCase().charAt(0);
 
                 // flag to keep from printing the correct letter message too much
                 boolean correct = false;
@@ -76,12 +81,12 @@ public class Wheel {
 
                 System.out.println("Correct guesses: " + guessed);
                 System.out.print("Hit any enter to continue...");
-                utility.scan.nextLine();
+                scan.nextLine();
 
             } else {
                 System.out.println("Guessed Phrase letters: \n\t" + guessed);
                 System.out.println("Please enter your guess (no punctuation but include spaces):");
-                String finalGuess = utility.scan.nextLine();
+                String finalGuess = scan.nextLine();
 
                 if (finalGuess.equalsIgnoreCase(answer)) {
                     System.out.println("You guessed correctly!");
@@ -91,14 +96,14 @@ public class Wheel {
 
                 // Right or wrong it is time to exit
                 System.out.print("Thanks for playing! Hit any enter to exit...");
-                utility.scan.nextLine();
+                scan.nextLine();
                 return;
             }
         }
     }
 
-    private void printGreeting() {
-        utility.clearScreen();
+    protected void printGreeting() {
+        clearScreen();
 
         System.out.print("""
                                   _               _\s
@@ -111,7 +116,7 @@ public class Wheel {
                Time to start Wheel!
                Press enter when your ready to continue:""");
 
-        utility.scan.nextLine();
-        utility.clearScreen();
+        scan.nextLine();
+        clearScreen();
     }
 }

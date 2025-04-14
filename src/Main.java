@@ -38,13 +38,13 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    evenOdd.playEvenOdd();
+                    evenOdd.playGame();
                     break;
                 case 2:
-                    redBlue.playRedBlue();
+                    redBlue.playGame();
                     break;
                 case 3:
-                    wheel.playWheel();
+                    wheel.playGame();
                     break;
                 case 4:
                     playDeal();

@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Added Utility and Wheel">
-      <change afterPath="$PROJECT_DIR$/src/Gambler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Added Extended Class">
+      <change afterPath="$PROJECT_DIR$/data/evenodd_rules.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/redblue_rules.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/wheel_rules.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EvenOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EvenOdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gambler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RedBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RedBlue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wheel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wheel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,22 +52,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jgreenwell/IdeaProjects/TableTopGames/data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jgreenwell\IdeaProjects\TableTopGames\data" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -97,6 +108,11 @@
       <workItem from="1743775391031" duration="196000" />
       <workItem from="1744049591312" duration="3234000" />
       <workItem from="1744128404700" duration="1752000" />
+      <workItem from="1744218158799" duration="3687000" />
+      <workItem from="1744224946649" duration="2156000" />
+      <workItem from="1744391290860" duration="485000" />
+      <workItem from="1744391806721" duration="377000" />
+      <workItem from="1744640646364" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="Added new game for learning for loops">
       <option name="closed" value="true" />
@@ -178,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743624645477</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added Extended Class">
+      <option name="closed" value="true" />
+      <created>1744218197356</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744218197356</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +229,7 @@
     <MESSAGE value="Added label and array to Deal" />
     <MESSAGE value="Added game classes" />
     <MESSAGE value="Added Utility and Wheel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Utility and Wheel" />
+    <MESSAGE value="Added Extended Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Extended Class" />
   </component>
 </project>

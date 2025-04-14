@@ -1,17 +1,41 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
  * Repeated utility functions for games:
  * clearscreen, getrandom, and Scanner access
  */
-public class Utility {
+public abstract class Game {
     public Scanner scan = new Scanner(System.in);
-    private int maxValue = 12;
+    protected int maxValue = 12;
 
-    public Utility() {}
-    public Utility(int newValue) {
+    public Game() {}
+    public Game(int newValue) {
         setMaxValue(newValue);
     }
+
+    // New stuff here
+
+    public abstract void playGame();
+    protected abstract void printGreeting();
+
+    protected String loadRules(String filename) {
+        StringBuilder rules = new StringBuilder();
+
+        try {
+            for (String line : Files.readAllLines(Paths.get(
+                    "data/" + filename + "_rules.txt"))) {
+                rules.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return rules.toString();
+    }
+
+    // old utility below
 
     /**
      * Set Max Value for random number based on passed value

@@ -1,0 +1,5 @@
+Red vs. Blue, it's me versus you....
+ This game is a simplified version of an old dice game.
+ If you draw a card red gets 1 point
+ Blue cards give blue a point
+ If you draw the Joker both teams lose a point.
