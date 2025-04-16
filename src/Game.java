@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Repeated utility functions for games:
@@ -21,6 +21,11 @@ public abstract class Game {
     public abstract void playGame();
     protected abstract void printGreeting();
 
+    public record LeaderBoard(String initials, long score, String game) {}
+    public Map<String, Long> gameLeaders = new HashMap<>();
+    public record gameLeader(String initials, long score) {};
+    private List<LeaderBoard> allLeaders = new ArrayList<>();
+
     protected String loadRules(String filename) {
         StringBuilder rules = new StringBuilder();
 
@@ -34,6 +39,72 @@ public abstract class Game {
         }
         return rules.toString();
     }
+
+    protected void loadGameLeaders(String filename) {
+        // Filename cannot be blank
+        if (filename.isBlank()) {
+            System.out.println("No game leaders file specified");
+            return;
+        }
+
+        try {
+            for (String line : Files.readAllLines(Paths.get(
+                    "data/leaderboard_" + filename + ".txt"))) {
+                System.out.printf("Line is %s, split its %s\n",
+                        line, Arrays.toString(line.split(": ")));
+
+                String[] parts = line.split(": ");
+                gameLeaders.put(parts[0], Long.parseLong(parts[1]));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected void loadAllLeaders() {
+        try {
+            for (String line : Files.readAllLines(Paths.get("data/universal_leaderboard.csv"))) {
+                if (!line.startsWith("Initials")) {
+                    System.out.println("Line is " + line);
+                    String[] parts = line.split(",");
+                    System.out.println(Arrays.toString(parts));
+
+                    LeaderBoard temp = new LeaderBoard(parts[0], Long.parseLong(parts[1]), parts[2]);
+                    allLeaders.add(temp);
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected void displayAllLeaders() {
+        for (LeaderBoard leader : allLeaders) {
+            System.out.println("just leader: " + leader.toString());
+        }
+    }
+
+    protected boolean updateRules(String filename, String newRules) {
+        // Always verify and validate
+        if (newRules.trim().isBlank()) {
+            // It's empty so just exit
+            System.out.println("Rules cannot be empty");
+            return false;
+        }
+
+        try {
+            Files.write(Paths.get("reports/query.csv"), newRules.getBytes());
+        } catch (IOException e) {
+            // Failed miserably - false
+            System.out.printf("Error writing to file: %s: %s\n", filename, e.getMessage());
+            return false;
+        }
+
+        // It actually worked! Return true
+        return true;
+    }
+
+
 
     // old utility below
 

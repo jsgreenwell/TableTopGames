@@ -34,6 +34,19 @@ public class Main {
             choice = Integer.parseInt(scan.nextLine());
             // above removes extra newline & ensures an integer value
 
+            if (choice == 0) {
+                /*
+                evenOdd.loadGameLeaders("evenodd");
+                System.out.println(evenOdd.gameLeaders.toString());
+                scan.nextLine();
+
+                 */
+
+                evenOdd.loadAllLeaders();
+                evenOdd.displayAllLeaders();
+                scan.nextLine();
+            }
+
             if (choice < 9 ) { getPlayers(); }
 
             switch (choice) {

@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Added Extended Class">
-      <change afterPath="$PROJECT_DIR$/data/evenodd_rules.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/redblue_rules.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/wheel_rules.txt" afterDir="false" />
+    <list default="true" id="00c269d9-db1b-46d7-abe8-dee53cd01bbf" name="Changes" comment="Made Utility abstract">
+      <change afterPath="$PROJECT_DIR$/data/leaderboard_evenodd.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/universal_leaderboard.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EvenOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EvenOdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gambler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RedBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RedBlue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wheel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wheel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -52,23 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jgreenwell/IdeaProjects/TableTopGames/data",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jgreenwell/IdeaProjects/TableTopGames/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jgreenwell\IdeaProjects\TableTopGames\data" />
@@ -112,7 +108,10 @@
       <workItem from="1744224946649" duration="2156000" />
       <workItem from="1744391290860" duration="485000" />
       <workItem from="1744391806721" duration="377000" />
-      <workItem from="1744640646364" duration="1747000" />
+      <workItem from="1744640646364" duration="2865000" />
+      <workItem from="1744644497644" duration="5614000" />
+      <workItem from="1744815671468" duration="187000" />
+      <workItem from="1744815885201" duration="4731000" />
     </task>
     <task id="LOCAL-00001" summary="Added new game for learning for loops">
       <option name="closed" value="true" />
@@ -202,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744218197356</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Made Utility abstract">
+      <option name="closed" value="true" />
+      <created>1744642433338</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744642433338</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +237,7 @@
     <MESSAGE value="Added game classes" />
     <MESSAGE value="Added Utility and Wheel" />
     <MESSAGE value="Added Extended Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Extended Class" />
+    <MESSAGE value="Made Utility abstract" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made Utility abstract" />
   </component>
 </project>
