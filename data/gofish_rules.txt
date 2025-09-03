@@ -1,0 +1,32 @@
+GO FISH RULES
+=============
+
+Goal: Collect the most sets of four cards of the same rank (like four Aces, four Kings, etc.)
+
+Setup:
+- Each player gets 7 cards from a shuffled deck
+- Remaining cards form the "pond" (draw pile)
+
+How to Play:
+1. Players take turns asking each other for cards of a specific rank
+   Example: "Do you have any Aces?"
+   
+2. If the other player has cards of that rank:
+   - They must give you ALL cards of that rank
+   - You get another turn
+   
+3. If the other player doesn't have any cards of that rank:
+   - They say "Go Fish!"
+   - You draw a card from the pond
+   - Your turn ends
+   
+4. When you collect four cards of the same rank, you lay them down as a "book"
+
+5. Game ends when either:
+   - All books have been collected, OR
+   - The pond runs out of cards
+
+Winning:
+The player with the most books (sets of four) wins!
+
+Press Enter to continue...
