@@ -15,6 +15,7 @@ public class Main {
         EvenOdd evenOdd = new EvenOdd();
         RedBlue redBlue = new RedBlue();
         Wheel wheel = new Wheel();
+        GoFish goFish = new GoFish();
 
         // Using label to break out of game - should use a function & return
         gameLoop:
@@ -27,6 +28,7 @@ public class Main {
                     \t2. Red/Blue
                     \t3. America's Game (Wheel)!
                     \t4. Monopoly(-ish) Deal!
+                    \t5. Go Fish!
                     \t9. Exit
                     """);
 
@@ -47,7 +49,7 @@ public class Main {
                 scan.nextLine();
             }
 
-            if (choice < 9 ) { getPlayers(); }
+            if (choice < 9 && choice != 5) { getPlayers(); }
 
             switch (choice) {
                 case 1:
@@ -61,6 +63,9 @@ public class Main {
                     break;
                 case 4:
                     playDeal();
+                    break;
+                case 5:
+                    goFish.playGame();
                     break;
                 case 9:
                     System.out.println("Thanks for playing! Goodbye!");
